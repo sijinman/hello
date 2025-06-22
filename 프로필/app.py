@@ -1,0 +1,32 @@
+# app.py
+
+# 1. 필요한 도구를 가져옵니다 (import)
+import streamlit as st
+from PIL import Image
+# 2. st. 을 이용해서 화면에 글자와 그림을 추가합니다.
+st.title("쁘니네 가족 프로필")
+st.write("우리 아이들을 소개하는 공간입니다. 방문해주셔서 감사합니다!")
+st.write("---")
+st.header("첫째 쁘니")
+st.image("bb.jpg", caption="우리 첫째 쁘니, 이뻐서 쁘니다.", width=300)
+st.write("*이름 : 쁘니")
+st.write("*성별 : 남자")
+st.write("*나이 : 5세")
+st.write("*취미 : 아빠와 장난, 동생과 사냥놀이")
+st.write("---")
+st.header("둘째 요미")
+st.image("yy.jpg", caption="귀요미라서 요미", width=300)
+st.write("*이름 : 요미")
+st.write("*성별 : 여자")
+st.write("*나이 : 4세")
+st.write("*취미 : 캣휠 타기, 일광욕, 오빠 따라다니기")
+st.write("---")
+st.header("셋째 감자")
+st.image("gg.jpg", caption="감자밭에서 만나서 감자", width=300)
+st.write("*이름 : 감자")
+st.write("*성별 : 남자")
+st.write("*나이 : 3세")
+st.write("*취미 : 박스에 몸 끼워보기")
+st.write("---")
+st.header("언젠가 우리 만나면 웃는 얼굴로 인사해요~!")
+st.balloons()

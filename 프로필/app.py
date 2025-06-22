@@ -1,32 +1,61 @@
-# app.py
-
-# 1. 필요한 도구를 가져옵니다 (import)
 import streamlit as st
-from PIL import Image
-# 2. st. 을 이용해서 화면에 글자와 그림을 추가합니다.
-st.title("쁘니네 가족 프로필")
-st.write("우리 아이들을 소개하는 공간입니다. 방문해주셔서 감사합니다!")
+
+# --- 페이지 기본 설정 ---
+st.set_page_config(
+    page_title="우리 가족!",
+    page_icon="👨‍👩‍👧‍👦",
+    layout="wide" # 넓은 레이아웃으로 설정
+)
+
+# --- 제목 ---
+st.title("❤️ 소중한 우리 가족을 소개합니다 ❤️")
 st.write("---")
-st.header("첫째 쁘니")
-st.image("bb.jpg", caption="우리 첫째 쁘니, 이뻐서 쁘니다.", width=300)
-st.write("*이름 : 쁘니")
-st.write("*성별 : 남자")
-st.write("*나이 : 5세")
-st.write("*취미 : 아빠와 장난, 동생과 사냥놀이")
+
+# --- 프로필 섹션 (3개의 칸으로 나누기) ---
+col1, col2, col3 = st.columns(3)
+
+# 첫 번째 칸 (BB 프로필)
+with col1:
+    st.header("첫째 쁘니")
+    # 이 코드는 작동하는 것을 확인했습니다.
+    st.image("bb.jpg", caption="우리집 예쁘니")
+    
+    st.write("**특징:** 고등어 무늬에 뒷발엔 양말 무늬!")
+    with st.expander("자세히 보기"):
+        st.write("""
+            - 좋아하는 것: 우다다, 아빠랑 놀기
+            - 좋아하는 간식: 황태, 츄르
+        """)
+
+# 두 번째 칸 (YY 프로필)
+with col2:
+    st.header("둘째 요미")
+    # 이 코드는 작동하는 것을 확인했습니다.
+    st.image("yy.jpg", caption="보기엔 귀엽지만 엄청 도도")
+
+    st.write("**특징:** 조용하고 잠이 많음")
+    with st.expander("자세히 보기"):
+        st.write("""
+            - 좋아하는 것: 일광욕, 캣휠, 오빠 따라다니기
+            - 좋아하는 간식: 닭가슴살, 츄르
+        """)
+
+# 세 번째 칸 (GG 프로필)
+with col3:
+    st.header("셋째 감자")
+    # 이 코드는 작동하는 것을 확인했습니다.
+    st.image("gg.jpg", caption="에너자이저 막내")
+    
+    st.write("**특징:** 덩치는 제일 크지만 서열꼴찌")
+    with st.expander("자세히 보기"):
+        st.write("""
+            - 취미: 캣타워 뿌시기
+            - 좋아하는 간식: 뭐든지 다 잘먹음
+        """)
+
+# --- 추가 기능 ---
 st.write("---")
-st.header("둘째 요미")
-st.image("yy.jpg", caption="귀요미라서 요미", width=300)
-st.write("*이름 : 요미")
-st.write("*성별 : 여자")
-st.write("*나이 : 4세")
-st.write("*취미 : 캣휠 타기, 일광욕, 오빠 따라다니기")
-st.write("---")
-st.header("셋째 감자")
-st.image("gg.jpg", caption="감자밭에서 만나서 감자", width=300)
-st.write("*이름 : 감자")
-st.write("*성별 : 남자")
-st.write("*나이 : 3세")
-st.write("*취미 : 박스에 몸 끼워보기")
-st.write("---")
-st.header("언젠가 우리 만나면 웃는 얼굴로 인사해요~!")
-st.balloons()
+st.header("🎉 축하 버튼 🎉")
+if st.button("우리 아이들, 앞으로도 행복하자!"):
+    st.balloons()
+    st.success("사랑해! ❤️")
